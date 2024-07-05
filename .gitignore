@@ -1,0 +1,8 @@
+.DS_Store
+.chtdata/
+
+
+.env
+
+# Local Netlify folder
+.netlify
