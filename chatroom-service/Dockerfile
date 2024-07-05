@@ -10,6 +10,6 @@ RUN unzip pocketbase.zip && chmod +x ./pocketbase && rm pocketbase.zip
 
 COPY . /app
 
-HEALTHCHECK --interval=10s --timeout=5s --start-period=5s CMD curl -f http://localhost:8090/api/health || exit 1
+HEALTHCHECK --interval=10s --timeout=5s --start-period=5s CMD curl -f http://localhost:${PORT}/api/health || exit 1
 
-CMD ["./pocketbase", "serve", "--http=0.0.0.0:8090"]
+CMD ["sh", "-c", "./pocketbase serve --http=0.0.0.0:$PORT"]
